@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(cors())
 
 app.get('/', (req, res) => {
-	res.send(db.select('*').from('users').then());
+	res.send('test');
 });
 
 
