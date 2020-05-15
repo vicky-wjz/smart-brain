@@ -6,6 +6,15 @@ const signin = require('./controllers/signIn');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
+
+const app = express();
+
+app.use(express.json()); 
+
+
+app.use(cors());
+
+
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0; 
 
 var db = require('knex')({
@@ -18,16 +27,8 @@ var db = require('knex')({
 });
 
 
-
-const app = express();
-
-app.use(express.json()); 
-
-
-app.use(cors())
-
 app.get('/', (req, res) => {
-	res.send('db.select('*').from('users').then()');
+	res.send('test');
 });
 
 
