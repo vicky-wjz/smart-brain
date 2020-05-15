@@ -9,10 +9,8 @@ const image = require('./controllers/image');
 var db = require('knex')({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    user : 'vicky',
-    password : '1111',
-    database : 'smart-brain'
+    connectionString : process.env.DATABASE_URL,
+    ssl:true
   }
 });
 
@@ -26,7 +24,7 @@ app.use(express.json());
 app.use(cors())
 
 app.get('/', (req, res) => {
-	res.send('test');
+	res.send('db.select('*').from('users').then()');
 });
 
 
